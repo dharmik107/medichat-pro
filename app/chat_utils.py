@@ -14,11 +14,6 @@ def _get_env_api_key() -> Optional[str]:
 
 
 def get_chat_model(api_key: Optional[str] = None):
-    """Create and return the Euriai chat model.
-
-    Priority: explicit `api_key` argument -> `EURIAI_API_KEY` env var.
-    Raises a ValueError with a clear message when no valid key is available.
-    """
     key = None
     if api_key and isinstance(api_key, str) and api_key.strip():
         key = api_key.strip()
